@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 20;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.popup_internal {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+.footer-cancel-button {
+	margin-left: 0.5rem; /* 4px */
+}
+
+.modal-close {
+	display: none;
+}
+
+.modal-wrapper {
+	height: inherit;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: slide-down 300ms ease-out forwards;
+}
+.main-form {
+	margin-left: 200px;
+	margin-right: 200px;
+}
