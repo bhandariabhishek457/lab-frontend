@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Navbar from "./components/Navbar";
-import Register from "./components/Register";
-import VaccineList from "./components/VaccineList";
-import PrivateRoute from "./components/PrivateRoute.js";
+import Login from "./components/auth/Login";
+import Navbar from "./components/commons/Navbar";
+import Register from "./components/auth/Register";
+import VaccineList from "./components/vaccines/VaccineList";
+import PrivateRoute from "./components/auth/PrivateRoute.js";
 
 function App() {
 	return (

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { appConfig } from "../config";
 import jwt_decode from "jwt-decode";
+import { appConfig } from "../config";
 
 export const http = axios.create({
 	baseURL: appConfig.apiBaseUrl,

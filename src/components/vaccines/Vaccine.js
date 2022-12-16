@@ -15,7 +15,7 @@ const Vaccine = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				{props.vaccines.map((vaccine, index) => (
+				{props.vaccines?.map((vaccine, index) => (
 					<tr key={vaccine.id}>
 						<td>{index + 1}</td>
 						<td>{vaccine.name}</td>

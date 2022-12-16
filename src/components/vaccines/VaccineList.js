@@ -1,8 +1,8 @@
-import "./model.css";
-import { http } from "../utils/http";
+import "./../commons/model.css";
+import { http } from "../../utils/http";
 import "reactjs-popup/dist/index.css";
-import Modal from "./model.js";
-import { appConfig } from "../config";
+import Modal from "../commons/model.js";
+import { appConfig } from "../../config";
 import { useState, useEffect } from "react";
 import AddEditVaccine from "./AddEditVaccine";
 import { Avatar } from "antd";

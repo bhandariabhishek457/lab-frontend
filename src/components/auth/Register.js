@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { appConfig } from "../config";
+import { appConfig } from "../../config";
 import { useNavigate } from "react-router-dom";
-import { validateUser } from "../validators/userRegisterValidator";
+import { validateUser } from "../../validators/userRegisterValidator";
 
 const Register = () => {
 	const navigator = useNavigate();

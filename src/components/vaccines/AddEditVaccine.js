@@ -1,9 +1,9 @@
-import "../App.css";
-import { http } from "../utils/http";
-import { appConfig } from "../config";
+import "../../App.css";
+import { http } from "../../utils/http";
+import { appConfig } from "../../config";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { validateVaccine } from "../validators/vaccineValidator";
+import { validateVaccine } from "../../validators/vaccineValidator";
 
 const AddEditVaccine = (props) => {
 	const navigate = useNavigate();

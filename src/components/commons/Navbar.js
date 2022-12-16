@@ -1,7 +1,7 @@
-import "../App.css";
+import "../../App.css";
 import React from "react";
 import axios from "axios";
-import { appConfig } from "../config";
+import { appConfig } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
