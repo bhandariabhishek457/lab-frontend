@@ -104,7 +104,7 @@ const AddEditVaccine = (props) => {
 	};
 
 	return (
-		<form onSubmit={submit} className="popup_internal">
+		<form onSubmit={submit} className="popup_internal" role="dialog">
 			<div className="field">
 				<label className="field">Name</label>
 				<div className="control">
