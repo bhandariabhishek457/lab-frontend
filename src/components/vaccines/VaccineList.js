@@ -43,7 +43,7 @@ const VaccineList = () => {
 	};
 
 	return (
-		<div className="main-form">
+		<div className="main-form" role="main">
 			<button onClick={() => toggleAddVaccine()} className="button is-success">
 				Add New
 			</button>
