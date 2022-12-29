@@ -19,15 +19,16 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className="navbar is-light"
+			className="navbar is-success"
 			role="navigation"
 			aria-label="main navigation"
 		>
+			{" "}
 			<div className="container">
 				<div id="navbarBasicExample" className="navbar-menu">
 					<div className="navbar-end">
 						<div className="navbar-item">
-							<div className="buttons">
+							<div className="buttons is-primary">
 								<button onClick={Logout} className="button is-light">
 									Log Out
 								</button>

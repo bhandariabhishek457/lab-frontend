@@ -23,9 +23,10 @@ const VaccineList = () => {
 		setVaccine(response.data);
 	};
 
-	const deleteVaccine = async (id) => {
-		await http.delete(appConfig.apiBaseUrl + `vaccines/${id}`);
-		getVaccines();
+	const deleteVaccine = async (vaccine) => {
+		await http.delete(appConfig.apiBaseUrl + `vaccines/${vaccine.id}`);
+		const list = vaccines.filter((vc) => vc.id !== vaccine.id);
+		setVaccine(list);
 	};
 
 	const toggleAddVaccine = () => {
@@ -43,16 +44,35 @@ const VaccineList = () => {
 	};
 
 	return (
-		<div className="main-form" role="main">
+		<div className="main-form mt-5" role="main">
 			<button onClick={() => toggleAddVaccine()} className="button is-success">
 				Add New
 			</button>
-			<Vaccine
-				deleteVaccine={deleteVaccine}
-				vaccines={vaccines}
-				setSelectedVaccine={setSelectedVaccine}
-				toggleEditVaccine={toggleEditVaccine}
-			/>
+
+			<table className="table is-striped  is-hoverable is-bordered is-fullwidth table-blue">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>No Of Doges</th>
+						<th>Mandatory</th>
+						<th>image</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{vaccines?.map((vaccine, index) => (
+						<Vaccine
+							deleteVaccine={deleteVaccine}
+							vaccine={vaccine}
+							index={index}
+							setSelectedVaccine={setSelectedVaccine}
+							toggleEditVaccine={toggleEditVaccine}
+						/>
+					))}
+				</tbody>
+			</table>
 
 			<Modal open={isAddVaccineDialogOpen}>
 				<AddEditVaccine
