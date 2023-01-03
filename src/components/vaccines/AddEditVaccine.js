@@ -4,6 +4,7 @@ import { appConfig } from "../../config";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { validateVaccine } from "../../validators/vaccineValidator";
+import { editVaccine, addVaccine } from "../../service/vaccineService.js";
 
 const AddEditVaccine = (props) => {
 	const navigate = useNavigate();
@@ -52,10 +53,7 @@ const AddEditVaccine = (props) => {
 
 		if (props.isEdit) {
 			try {
-				await http.patch(
-					appConfig.apiBaseUrl + `vaccines/${props.vaccine.id}`,
-					JSON.stringify(formValues)
-				);
+				await editVaccine(props.vaccine.id, formValues);
 				props.toggleAddVaccine();
 				props.toggleIsEdit();
 				navigate("/dashboard");
@@ -64,10 +62,8 @@ const AddEditVaccine = (props) => {
 			}
 		} else {
 			try {
-				await http.post(
-					appConfig.apiBaseUrl + "vaccines",
-					JSON.stringify(formValues)
-				);
+				await addVaccine(formValues);
+
 				props.toggleAddVaccine();
 				navigate("/dashboard");
 			} catch (error) {

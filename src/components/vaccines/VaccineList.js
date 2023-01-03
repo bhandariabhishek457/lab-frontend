@@ -1,12 +1,10 @@
 import "./../commons/model.css";
-import { http } from "../../utils/http";
+import Vaccine from "./Vaccine";
 import "reactjs-popup/dist/index.css";
 import Modal from "../commons/model.js";
-import { appConfig } from "../../config";
 import { useState, useEffect } from "react";
 import AddEditVaccine from "./AddEditVaccine";
-import { Avatar } from "antd";
-import Vaccine from "./Vaccine";
+import { removeVaccine, getAllVaccine } from "../../service/vaccineService.js";
 
 const VaccineList = () => {
 	const [vaccines, setVaccine] = useState([]);
@@ -19,12 +17,12 @@ const VaccineList = () => {
 	}, []);
 
 	const getVaccines = async () => {
-		const response = await http.get(appConfig.apiBaseUrl + "vaccines");
+		const response = await getAllVaccine();
 		setVaccine(response.data);
 	};
 
 	const deleteVaccine = async (vaccine) => {
-		await http.delete(appConfig.apiBaseUrl + `vaccines/${vaccine.id}`);
+		await removeVaccine(vaccine.id);
 		const list = vaccines.filter((vc) => vc.id !== vaccine.id);
 		setVaccine(list);
 	};
